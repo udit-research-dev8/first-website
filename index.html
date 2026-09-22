@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udit Singh Rajput | Advanced Scientific Research</title>
+    <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -11,81 +16,129 @@
             box-sizing: border-box;
         }
 
+        /* 1. सबसे पीछे का अनमूवेबल (Fixed) बैकग्राउंड लेयर */
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #080c14;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(rgba(3, 7, 18, 0.75), rgba(10, 15, 30, 0.85)), 
+                        url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
             color: #e2e8f0;
             line-height: 1.8;
+            min-height: 100vh;
         }
 
-        /* Hero Header with Scientific Vibe */
+        h1, h2, h3, h4, .badge, .resource-link, .email-btn {
+            font-family: 'Outfit', sans-serif;
+        }
+
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
-            padding: 90px 20px;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 75px 20px;
             text-align: center;
-            border-bottom: 3px solid #6366f1;
-            position: relative;
+            border-bottom: 2px solid rgba(99, 102, 241, 0.4);
         }
 
         .badge {
             display: inline-block;
             background: linear-gradient(90deg, #6366f1, #a855f7);
             color: #fff;
-            padding: 6px 18px;
+            padding: 6px 20px;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.5);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.4rem;
             color: #ffffff;
             margin-bottom: 12px;
             font-weight: 900;
-            letter-spacing: -0.5px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #cbd5e1;
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
         }
 
-        /* Container Layout */
         .container {
             max-width: 1050px;
-            margin: 50px auto;
+            margin: 45px auto;
             padding: 0 20px;
         }
 
-        /* Intro Box */
-        .intro-box {
-            background: linear-gradient(145deg, #111827, #1f2937);
+        /* 2. ट्रांसपेरेंट ग्लासमर्फिज्म लेयर (Profile & About Section) */
+        .profile-section {
+            background: rgba(17, 24, 39, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             padding: 40px;
-            border-radius: 20px;
+            border-radius: 24px;
             border-left: 6px solid #a855f7;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             margin-bottom: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: wrap;
         }
 
-        .intro-box h2 {
+        .profile-img-box {
+            flex-shrink: 0;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+            margin: 0 auto;
+            background: #000;
+        }
+
+        .profile-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img-box img:hover {
+            transform: scale(1.08);
+        }
+
+        .profile-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .profile-text h2 {
             color: #c084fc;
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
-        .intro-box p {
-            color: #9ca3af;
+        .profile-text p {
+            color: #e2e8f0;
             font-size: 1.05rem;
             margin-bottom: 12px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            font-weight: 400;
         }
 
-        /* Grid for Research Cards with multi-colors */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -93,14 +146,18 @@
             margin-bottom: 35px;
         }
 
+        /* ट्रांसपेरेंट कार्ड्स लेयर */
         .card {
-            background: #111827;
-            border-radius: 20px;
+            background: rgba(17, 24, 39, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
             padding: 35px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .card::before {
@@ -119,15 +176,18 @@
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            background: rgba(17, 24, 39, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .card h3 {
-            font-size: 1.6rem;
+            font-size: 1.65rem;
             margin-bottom: 18px;
             display: flex;
             align-items: center;
             gap: 12px;
+            font-weight: 700;
         }
 
         .card.physics h3 { color: #38bdf8; }
@@ -140,11 +200,12 @@
         }
 
         .card ul li {
-            color: #94a3b8;
-            font-size: 1rem;
-            margin-bottom: 12px;
+            color: #cbd5e1;
+            font-size: 1.02rem;
+            margin-bottom: 14px;
             position: relative;
             padding-left: 20px;
+            font-weight: 400;
         }
 
         .card ul li::before {
@@ -159,24 +220,67 @@
         .card.engineering ul li::before { color: #fb7185; }
         .card.academic ul li::before { color: #f59e0b; }
 
-        /* Contact Section */
+        .resources-box {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 35px;
+            border-radius: 24px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            margin-bottom: 35px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .resources-box h2 {
+            color: #38bdf8;
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .resources-box p {
+            color: #cbd5e1;
+        }
+
+        .resource-link {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 10px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 12px;
+            margin-top: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            transition: all 0.2s;
+        }
+
+        .resource-link:hover {
+            background: rgba(56, 189, 248, 0.3);
+            transform: scale(1.03);
+        }
+
         .contact-section {
-            background: linear-gradient(135deg, #1e1b4b, #311042);
+            background: rgba(30, 27, 75, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             text-align: center;
             padding: 50px;
-            border-radius: 20px;
-            border: 2px solid #a855f7;
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+            border-radius: 24px;
+            border: 2px solid rgba(168, 85, 247, 0.5);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.25);
         }
 
         .contact-section h2 {
             color: #e9d5ff;
-            font-size: 2rem;
+            font-size: 2.1rem;
             margin-bottom: 15px;
+            font-weight: 800;
         }
 
         .contact-section p {
-            color: #d8b4fe;
+            color: #e2e8f0;
             margin-bottom: 25px;
             font-size: 1.1rem;
         }
@@ -199,14 +303,14 @@
             transform: scale(1.05);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 35px;
-            color: #64748b;
-            font-size: 0.9rem;
-            background: #05070b;
-            border-top: 1px solid #1f2937;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            background: rgba(5, 7, 11, 0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 60px;
         }
 
@@ -215,7 +319,7 @@
                 grid-template-columns: 1fr;
             }
             header h1 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
         }
     </style>
@@ -225,66 +329,74 @@
     <header>
         <div class="badge">🔬 Advanced Scientific Research Space</div>
         <h1>Udit Singh Rajput</h1>
-        <p>भौतिकी, क्वांटम डायनामिक्स, बायोटेक और मॉडर्न इंजीनियरिंग का डिजिटल रिसर्च हब</p>
+        <p>Digital Research Hub for Physics, Quantum Dynamics, Biotech & Modern Engineering</p>
     </header>
 
     <div class="container">
         
-        <!-- बायोडाटा / परिचय -->
-        <div class="intro-box">
-            <h2>💡 शोधार्थी एवं परिचय (Research Profile)</h2>
-            <p>नमस्ते! मैं उदित सिंह राजपूत हूँ। यह मेरा मुख्य डिजिटल रिसर्च पोर्टल है, जहाँ विज्ञान की गहराइयों, ब्रह्मांडीय सिद्धांतों, और प्रायोगिक इंजीनियरिंग से जुड़े मेरे सभी अध्ययन और प्रोजेक्ट्स संकलित हैं।</p>
-            <p>मेरा उद्देश्य प्रकृति के नियमों को समझना, वैज्ञानिक सोच को विस्तार देना और तकनीकी रूप से उन्नत समाधानों का निर्माण करना है।</p>
+        <!-- Profile & About Section with 'Thoughtful' Photo -->
+        <div class="profile-section">
+            <div class="profile-img-box">
+                <!-- आपकी भेजी हुई फोटो यहाँ सेट है (GitHub पर नाम udit-photo.jpg रखना) -->
+                <img src="udit-photo.jpg" alt="Udit Singh Rajput">
+            </div>
+            <div class="profile-text">
+                <h2>💡 Research Profile & Objective</h2>
+                <p>Welcome! I am Udit Singh Rajput. This is my official digital research portfolio where I compile studies, theoretical insights, and experimental projects revolving around fundamental sciences and advanced engineering systems.</p>
+                <p>My core mission is to decode complex physical phenomena, expand scientific reasoning, and engineer efficient technological solutions for the future.</p>
+            </div>
         </div>
 
         <div class="grid">
-            <!-- फिजिक्स रिसर्च -->
             <div class="card physics">
-                <h3>⚛️ भौतिकी एवं क्वांटम रिसर्च</h3>
+                <h3>⚛️ Physics & Quantum Dynamics</h3>
                 <ul>
-                    <li><strong>लार्ज हैड्रॉन कोलाइडर (LHC):</strong> उच्च-ऊर्जा कण भौतिकी और प्रोटॉन गतिकी का गहन अध्ययन।</li>
-                    <li><strong>सिंchrotron रेडिएशन:</strong> इलेक्ट्रोमैग्नेटिक फील्ड्स और ऊर्जा उत्सर्जन की कार्यप्रणाली।</li>
-                    <li><strong>सिस्टम्स डायनामिक्स:</strong> बटरफ्लाई इफेक्ट और जटिल प्राकृतिक प्रणालियों का विश्लेषण।</li>
+                    <li><strong>Large Hadron Collider (LHC):</strong> Theoretical examination of high-energy particle physics and proton motion.</li>
+                    <li><strong>Synchrotron Radiation:</strong> Researching electromagnetic fields and energy emission behaviors.</li>
+                    <li><strong>Systems Dynamics:</strong> Analyzing the Butterfly Effect and complex nonlinear natural architectures.</li>
                 </ul>
             </div>
 
-            <!-- बायोटेक और लाइफ साइंसेज -->
             <div class="card biotech">
-                <h3>🧬 बायोटेक एवं लाइफ साइंसेज</h3>
+                <h3>🧬 Biotech & Life Sciences</h3>
                 <ul>
-                    <li>आधुनिक जैव-विज्ञान (Biological Sciences) और तकनीकी चिकित्सा का अन्वेषण।</li>
-                    <li>शोध पत्रिकाओं, वैज्ञानिक बायोग्राफी और उच्च-स्तरीय रिसर्च पेपर्स का अध्ययन।</li>
-                    <li>जीव विज्ञान और तकनीकी नवाचारों के बीच तालमेल स्थापित करना।</li>
+                    <li>Exploration of modern biological sciences and advanced medical technology trends.</li>
+                    <li>Review of high-level research papers, scientific biographies, and literature.</li>
+                    <li>Bridging biological principles with technical innovation concepts.</li>
                 </ul>
             </div>
         </div>
 
         <div class="grid">
-            <!-- DIY इंजीनियरिंग -->
             <div class="card engineering">
-                <h3>⚙️ DIY इंजीनियरिंग और डिजाइन</h3>
+                <h3>⚙️ DIY Engineering & Design</h3>
                 <ul>
-                    <li><strong>इलेक्ट्रोमैग्नेटिज़्म:</strong> एडवांस्ड कोन-शेप्ड इलेक्ट्रोमैग्नेट और चुंबकीय क्षेत्रों का प्रयोग।</li>
-                    <li><strong>स्ट्रक्चरल फिजिक्स:</strong> टेन्सेग्रिटी (Tensegrity) फ्लोटिंग संरचनाओं की डिजाइनिंग।</li>
-                    <li>मैकेनिकल काइनेटिक आर्ट और इन्नोवेटिव हार्डवेयर प्रोटोटाइपिंग।</li>
+                    <li><strong>Electromagnetism:</strong> Advanced cone-shaped electromagnet design and magnetic flux studies.</li>
+                    <li><strong>Structural Physics:</strong> Mechanics behind Tensegrity floating tension structures.</li>
+                    <li>Mechanical kinetic art and experimental hardware prototyping.</li>
                 </ul>
             </div>
 
-            <!-- अकादमिक लक्ष्य -->
             <div class="card academic">
-                <h3>🎓 अकादमिक एवं तकनीकी लक्ष्य</h3>
+                <h3>🎓 Academic & Technical Goals</h3>
                 <ul>
-                    <li>पॉलिटेक्निक और एडवांस्ड इंजीनियरिंग के माध्यम से तकनीकी महारत हासिल करना।</li>
-                    <li>गणितीय विश्लेषण (Calculus, Continuity & Differentiability) में मजबूत पकड़।</li>
-                    <li>अनुसंधान-उन्मुख और व्यावहारिक प्रोजेक्ट आधारित अध्ययन।</li>
+                    <li>Mastering core engineering principles through technical education.</li>
+                    <li>Deep analytical focus on advanced mathematics, calculus, and continuity.</li>
+                    <li>Project-driven experiential learning and research methodology.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- कॉन्टैक्ट सेक्शन -->
+        <div class="resources-box">
+            <h2>📂 Research Documents & Files</h2>
+            <p>Access my published notes, research summaries, and project blueprints below:</p>
+            <a href="#" class="resource-link">📄 View Research Notes (PDF)</a>
+            <a href="#" class="resource-link">📊 Project Blueprint (Data)</a>
+        </div>
+
         <div class="contact-section">
-            <h2>📬 सीधे संपर्क करें (Collaborate & Connect)</h2>
-            <p>यदि आप विज्ञान, रिसर्च या तकनीकी प्रोजेक्ट्स पर चर्चा करना चाहते हैं, तो आप मुझे सीधे ईमेल भेज सकते हैं:</p>
+            <h2>📬 Collaborate & Connect</h2>
+            <p>If you want to discuss research initiatives, scientific projects, or technical insights, feel free to reach out directly via email:</p>
             <a href="mailto:Uditk2oo8@gmail.com" class="email-btn">✉️ Uditk2oo8@gmail.com</a>
         </div>
 
