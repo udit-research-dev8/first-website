@@ -3,62 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Udit Singh Rajput | Research & Development</title>
+    <title>Udit Singh Rajput | Research & Scientific Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            line-height: 1.6;
+        :root {
+            --bg-color: #030712;
+            --card-bg: #0f172a;
+            --accent-color: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+        }
+
+        * {
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            max-width: 700px;
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border: 1px solid #334155;
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
         }
-        h1 {
-            color: #38bdf8;
-            margin-bottom: 5px;
+
+        header {
+            background: linear-gradient(135deg, #090d16 0%, #1e1b4b 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
         }
-        .subtitle {
-            font-size: 1.1rem;
-            color: #94a3b8;
+
+        header::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--accent-glow);
+            filter: blur(100px);
+            border-radius: 50%;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .profile-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
             margin-bottom: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p, .card li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: "▹ ";
+            color: var(--accent-color);
             font-weight: bold;
         }
-        p {
+
+        .contact-card {
+            background: linear-gradient(145deg, #0f172a, #111827);
+            text-align: center;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin-top: 25px;
+        }
+
+        .contact-card h2 {
+            color: var(--accent-color);
             margin-bottom: 15px;
         }
-        .badge {
+
+        .btn-email {
             display: inline-block;
-            background: #0284c7;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            background: var(--accent-color);
+            color: #030712;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
             margin-top: 15px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-email:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            background: #050811;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Udit Singh Rajput</h1>
-        <div class="subtitle">Research & Development Space</div>
-        
-        <p>नमस्ते! यह मेरा डिजिटल रिसर्च और वेब पोर्टल है। यहाँ मैं विज्ञान, गणित, भौतिकी और तकनीकी प्रोजेक्ट्स से जुड़े अपने अध्ययन और कार्यों को व्यवस्थित करता हूँ।</p>
-        
-        <p>मेरा फोकस अकादमिक उत्कृष्टता, इंजीनियरिंग और नई तकनीकी प्रणालियों को सीखने और विकसित करने पर है।</p>
 
-        <div class="badge">🚀 Focused on Technical Excellence</div>
+    <header>
+        <div class="profile-badge">RESEARCH & DEVELOPMENT PORTAL</div>
+        <h1>Udit Singh Rajput</h1>
+        <p>भौतिकी, उच्च-ऊर्जा अनुसंधान और आधुनिक तकनीकी इंजीनियरिंग का डिजिटल स्पेस</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="card" style="margin-bottom: 25px;">
+            <h2>💡 बायोडाटा एवं उद्देश्य (About Me)</h2>
+            <p>नमस्ते! मैं उदित सिंह राजपूत हूँ। यह मेरा आधिकारिक डिजिटल रिसर्च पोर्टफोलियो है। यहाँ मैं विज्ञान के मूलभूत सिद्धांतों, कण भौतिकी (Particle Physics), और व्यावहारिक इंजीनियरिंग से जुड़े अपने अध्ययन, शोध विचारों और प्रोजेक्ट्स को व्यवस्थित रूप से प्रस्तुत करता हूँ।</p>
+            <p>मेरा लक्ष्य जटिल वैज्ञानिक रहस्यों को समझना और मानवता के कल्याण के लिए प्रभावी तकनीकी समाधान और प्रणालियाँ विकसित करना है।</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h2>⚛️ भौतिकी एवं अनुसंधान (Physics & Research)</h2>
+                <ul>
+                    <li><strong>लार्ज हैड्रॉन कोलाइडर (LHC):</strong> प्रोटॉन कणों की गति और उच्च-ऊर्जा भौतिकी का सैद्धांतिक अध्ययन।</li>
+                    <li><strong>सिंchrotron विकिरण:</strong> इलेक्ट्रोमैग्नेटिक फील्ड्स और ऊर्जा उत्सर्जन के व्यवहार की रिसर्च।</li>
+                    <li><strong>ब्रह्मांडीय प्रणालियाँ:</strong> बटरफ्लाई इफेक्ट और जटिल प्राकृतिक गतिकी का विश्लेषण।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🧬 बायोटेक एवं विज्ञान (Biotech & Sciences)</h2>
+                <ul>
+                    <li>जैविक विज्ञान और आधुनिक तकनीकी चिकित्सा अनुसंधान का परिचय।</li>
+                    <li>वैज्ञानिक फिल्मों, बायोग्राफी और उच्च-स्तरीय रिसर्च पेपर्स का अध्ययन।</li>
+                    <li>वैज्ञानिक दृष्टिकोण और तार्किक सोच पर आधारित प्रोजेक्ट्स का निर्माण।</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h2>⚙️ DIY इंजीनियरिंग और डिजाइन</h2>
+                <ul>
+                    <li>इलेक्ट्रोमैग्नेटिज़्म और एडवांस्ड कोन-शेप्ड इलेक्ट्रोमैग्नेट डिजाइन।</li>
+                    <li>टेन्सेग्रिटी (Tensegrity) फ्लोटिंग संरचनाओं की भौतिकी।</li>
+                    <li>मैकेनिकल काइनेटिक आर्ट और इन्नोवेटिव गैजेट्स की कार्यप्रणाली।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🎓 अकादमिक और तकनीकी लक्ष्य</h2>
+                <ul>
+                    <li>पॉलिटेक्निक और एडवांस्ड इंजीनियरिंग शिक्षा के माध्यम से तकनीकी महारत।</li>
+                    <li>गणितीय विश्लेषण (Calculus & Differentiability) में गहरी पकड़।</li>
+                    <li>अनुसंधान-आधारित सोच और व्यावहारिक प्रोजेक्ट्स का विस्तार।</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h2>📬 सीधे संपर्क करें (Get in Touch)</h2>
+            <p>यदि आप मेरे रिसर्च प्रोजेक्ट्स, विज्ञान या तकनीकी चर्चाओं के संबंध में बात करना चाहते हैं, तो आप मुझे सीधे ईमेल भेज सकते हैं:</p>
+            <a href="mailto:Uditk2oo8@gmail.com" class="btn-email">✉️ ईमेल भेजें (Send Email)</a>
+        </div>
+
     </div>
+
+    <footer>
+        <p>&copy; 2026 Udit Singh Rajput. All Rights Reserved. Built for Science & Research.</p>
+    </footer>
+
 </body>
 </html>
